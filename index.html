@@ -74,7 +74,11 @@ function checkPhishing()
   const phishWords = ["click here", "urgent", "final notice", "click now", "limited time" ,"you've won", "free", "lottery", "lucky winner"];
   let found =false;
 
+
+
   //for loop that goes through all words in phishwords and checks the text to see if it includes any of the words
+  if(text!==null)
+  {
   for(const word of phishWords)
       if(text.includes(word))
       {
@@ -94,6 +98,9 @@ function checkPhishing()
     resultShow.style.color = "green";
   }
 }
+}
+  else
+  resultShow.textContent="Please enter a text";
 function checkQuiz()
 {
   const answers = document.getElementsByName('q1');
