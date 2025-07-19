@@ -148,7 +148,7 @@
     <label><input type="radio" name="q1" value="a"> A message asks you to click a link</label>
     <label><input type="radio" name="q1" value="b"> A message from your friend</label>
     <label><input type="radio" name="q1" value="c"> A message from your mom</label>
-    <button onclick="checkQuiz1()">Submit Answer</button>
+    <button onclick="checkQuiz(1, 'a')">Submit Answer</button>
     <div id="resultQ1" class="feedback"></div>
   </div>
  <div id="question2">
@@ -246,6 +246,34 @@ else
 }
 }
 //make checkQuiz1 and checkQuiz2
+function checkQuiz(questionNumber, correctAnswer) 
+{
+  const options = document.getElementsByName('q' + questionNumber);
+  let selectedOption = null;
+
+  for (let option of options) {
+    if (option.checked) {
+      selectedOption = option.value;
+      break;
+    }
+  }
+
+  const feedback = document.getElementById('resultQ' + questionNumber);
+
+  if (selectedOption === null) {
+    feedback.textContent = "Please select an answer.";
+    feedback.style.color = "orange";
+    return;
+  }
+
+  if (selectedOption === correctAnswer) {
+    feedback.textContent = "Correct!";
+    feedback.style.color = "green";
+  } else {
+    feedback.textContent = "Incorrect. Try again!";
+    feedback.style.color = "red";
+  }
+}
 function checkQuiz1()
 {
   const choices = document.getElementsByName('q1');
