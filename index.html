@@ -86,8 +86,6 @@ function checkPhishing()
   }
   //for loop that goes through all words in phishwords and checks the text to see if it includes any of the words
 else
- {
-  
   for(const word of phishWords)
       if(text.includes(word))
       {
@@ -106,33 +104,38 @@ else
     resultShow.style.color = "green";
   }
 }
-}
+
 
 function checkQuiz()
 {
-  const answers = document.getElementsByName('q1');
+  const choices = document.getElementsByName('q1');
   let selected = null;
+  //gets all choices from q1 
   const quizResult = document.getElementById('quizResult');
-  for(const ans of answers)
-    if(ans.checked)
+  for(const choice of choices)
+    if(choice.checked)
     {
-      selected = ans.value;
+      selected = choice.value;
+      //makes selected into the selected answer
       break;
     }
   if(selected=='a')
   {
     quizResult.textContent= "Correct! If people ask you to click suspicious links, it's a sign of phishing. You can identify these phishing attempts if the message asks you to confirm a payment, update information, or get a government subsidy. If you have not purchased anything, ignore it and check your bank balance. If it asks you to update your information, do it on the official site instead of clicking on the email in the site. The government does not often give money away through Gmail or texts.";
     quizResult.style.color="green";
+    //if user picks choice A
   }
   else if(selected ===null)
   {
     quizResult.textContent = "Please pick a choice!";
     quizResult.style.color = "orange";
+    //if user doesn't pick a choice
   }
   else
   {
     quizResult.textContent = "Incorrect. Pick another choice."
     quizResult.style.color = "red";
+    //if user doesn't pick choice A
   }
 }
   
