@@ -203,7 +203,7 @@ function checkQuiz1()
   const choices = document.getElementsByName('q1');
   let selected = null;
   //gets all choices from q1 
-  const quizResult = document.getElementById('question2');
+  const quizResult = document.getElementById('question1');
   for(const choice of choices)
     if(choice.checked)
     {
@@ -214,6 +214,7 @@ function checkQuiz1()
   if(selected=='a')
   {
     quizResult.textContent= "Correct! If a random person asks you to click a suspicious link, it's a sign of phishing.";
+    quizResult.style.color="green";
     correctq1 = true;
     //if user picks choice A
   }
