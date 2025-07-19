@@ -424,20 +424,25 @@ function checkQuiz3()
     score++;
 
   const finalResultDiv = document.getElementById('finalQuizResult');
-  if(score===total)
+  if(score===total && correctq1!==null)
   {
     finalResultDiv.textContent= `Perfect! You got ${score} out of ${total} correct! No phishing attempt can get past you.`;
     finalResultDiv.style.color= "green";
   }
-  else if(score>=total/2)
+  else if(score>=total/2 && correctq1!==null)
   {
   finalResultDiv.textContent = `Not Bad! You got ${score} out of ${total} correct. Beware of phishing attempts!`;
   finalResultDiv.style.color = "orange";
   }
-  else
+  else if(correctq1!==null)
   {
     finalResultDiv.textContent= `Please research how to protect yourself from phishing attempts! You only got ${score} out of ${total} correct!`;
     finalResultDiv.style.color="red";
+  }
+  else
+  {
+    finalResultDiv.textContent= "Please answer all questions before submitting your result!";
+    finalResultDiv.style.color="yellow";
   }
 }
 </script>
