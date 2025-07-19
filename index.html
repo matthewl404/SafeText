@@ -20,14 +20,17 @@
     font-size: 18px;
   }
   
-  button 
+  button
   {
     padding: 10px 20px;
     font-size: 20px;
     margin-top: 10px;
   }
-  
-  #result 
+  button:hover
+{
+  background-color: #e0f7ff;
+}
+  #result, #quizResult 
   {
     margin-top: 20px;
     font-size: 20px;
@@ -72,7 +75,7 @@ function checkPhishing()
 {
   const text = document.getElementById('messageInput').value.toLowerCase();
   const phishWords = ["click here", "urgent", "final notice", "click now", "limited time" ,"you've won", "free", "lottery", "lucky winner"];
-  let found =false;
+  let found = false;
   const resultShow = document.getElementById('result');
 
 
@@ -109,6 +112,7 @@ function checkQuiz()
 {
   const answers = document.getElementsByName('q1');
   let selected = null;
+  const quizResult = document.getElementById('quizResult');
   for(const ans of answers)
     if(ans.checked)
     {
