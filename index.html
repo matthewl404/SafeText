@@ -201,7 +201,18 @@ let correctq5=null;
 function checkPhishing()
 {
   const text = document.getElementById('messageInput').value.toLowerCase();
-  const phishWords = ["click here", "urgent", "final notice", "click now", "limited time" ,"you've won", "free", "lottery", "lucky winner", "reset password", "unusual activity", "confirm a purchase"];
+  const phishWords = [
+  "click here", "urgent", "final notice", "click now", "limited time", 
+  "you've won", "free", "lottery", "lucky winner", "reset password", 
+  "unusual activity", "confirm a purchase", "verify your account",
+  "update your info", "account suspended", "unauthorized login attempt",
+  "act now", "security alert", "your account is locked", "click below",
+  "login here", "payment failed", "payment required", "confirm your identity",
+  "billing issue", "access restricted", "reset your account", "win a prize",
+  "exclusive deal", "act immediately", "bank notice", "tax refund", 
+  "delivery failed", "unusual login location", "suspicious activity",
+  "identity verification"
+];
   let found = false;
   const resultShow = document.getElementById('result');
 
