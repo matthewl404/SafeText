@@ -86,6 +86,7 @@ function checkPhishing()
   }
   //for loop that goes through all words in phishwords and checks the text to see if it includes any of the words
 else
+ {
   for(const word of phishWords)
       if(text.includes(word))
       {
@@ -93,6 +94,7 @@ else
         break;
         //when the word is found end loop
       }
+ }
   if(found)
   {
     resultShow.textContent = "This message may be a phishing attempt!";
