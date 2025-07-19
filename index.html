@@ -73,16 +73,18 @@ function checkPhishing()
   const text = document.getElementById('messageInput').value.toLowerCase();
   const phishWords = ["click here", "urgent", "final notice", "click now", "limited time" ,"you've won", "free", "lottery", "lucky winner"];
   let found =false;
+  const resultShow = document.getElementById('result');
 
 
-
-  //for loop that goes through all words in phishwords and checks the text to see if it includes any of the words
-  if(text===null)
+ if(text===null)
   {
     resultShow.textContent="Please enter a text";
     resultShow.style.color="orange";
   }
-  else
+  //for loop that goes through all words in phishwords and checks the text to see if it includes any of the words
+else
+ {
+  
   for(const word of phishWords)
       if(text.includes(word))
       {
@@ -90,7 +92,6 @@ function checkPhishing()
         break;
         //when the word is found end loop
       }
-  const resultShow = document.getElementById('result');
   if(found)
   {
     resultShow.textContent = "This message may be a phishing attempt!";
@@ -101,6 +102,7 @@ function checkPhishing()
     resultShow.textContent = "This message looks safe!";
     resultShow.style.color = "green";
   }
+}
 }
 
 function checkQuiz()
