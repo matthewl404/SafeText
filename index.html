@@ -20,12 +20,12 @@
     font-size: 20px;
     margin-top: 10px;
   }
-  result {
+  #result {
     margin-top: 20px;
     font-size: 20px;
     font-weight: bold;
   }
-  quiz-section{
+  .quiz-section{
     margin-top: 40px;
   }
   label{
@@ -38,7 +38,7 @@
   <h1>SafeText</h1>
   <p>Enter a message to check if it's safe</p>
   <textarea id="messageInput" placeholder="Send a text!"></textarea><br>
-  <button onclick="checkPhishing()">Check Message</button>
+  <button onclick="checkPhishing()">Check Text</button>
   <div id="result"></div>
   <div class="quiz section">
     <h2>Phishing Quiz</h2>
@@ -57,7 +57,7 @@
 // do stuff here ( the functions )
 function checkPhishing()
 {
-  const text = document.getElementById('messageInput').valuetoLowerCase();
+  const text = document.getElementById('messageInput').value.toLowerCase();
   const phishWords = ["click here", "urgent", "final notice", "click now", "limited time" ,"you've won", "free", "lottery", "lucky"];
   let found =false;
 
