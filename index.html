@@ -136,16 +136,22 @@
   
   <div class="quiz-section">
     <h4>Phishing Quiz</h4>
+  <div id="question1">
     <p>Q1. Which is a common sign of phishing?</p>
     <label><input type="radio" name="q1" value="a"> A message asks you to click a link</label>
     <label><input type="radio" name="q1" value="b"> A message from your friend</label>
     <label><input type="radio" name="q1" value="c"> A message from your mom</label>
+    <button onclick="checkQuiz1()">Submit Answer</button>
+    <div id="resultQ1" class="feedback"></div>
+  </div>
+ <div id="question2">
     <p>Q2. What should you do if you get a suspicious email?</p>
     <label><input type="radio" name="q2" value="a"> Click the link to see what it is</label>
     <label><input type="radio" name="q2" value="b"> Report it or ask an adult</label>
     <label><input type="radio" name="q2" value="c"> Reply and ask if it’s real</label>
-    <button onclick="checkQuiz()">Submit Quiz Answer</button>
-    <div id="quizResult"></div>
+    <button onclick="checkQuiz2()">Submit Answer</button>
+    <div id="resultQ2" class="feedback"></div>
+    </div>  
   </div>
 
 
@@ -189,7 +195,7 @@ else
   }
 }
 
-
+//make checkQuiz1 and checkQuiz2
 function checkQuiz()
 {
   const choices = document.getElementsByName('q1');
