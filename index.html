@@ -76,7 +76,7 @@ function checkPhishing()
   const resultShow = document.getElementById('result');
 
 
- if(text===null)
+ if(text.trim()==="")
   {
     resultShow.textContent="Please enter a text";
     resultShow.style.color="orange";
