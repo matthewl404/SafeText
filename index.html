@@ -148,7 +148,8 @@
     <label><input type="radio" name="q1" value="a"> A message asks you to click a link</label>
     <label><input type="radio" name="q1" value="b"> A message from your friend</label>
     <label><input type="radio" name="q1" value="c"> A message from your mom</label>
-    <button onclick="checkQuiz(1, 'a')">Submit Answer</button>
+    <button onclick="checkQuiz(1, 'a', "Correct! If a random person asks you to click a suspicious link, its usually a sign of phishing."
+    quizResult.style.color="green")">Submit Answer</button>
     <div id="resultQ1" class="feedback"></div>
   </div>
  <div id="question2">
@@ -246,7 +247,7 @@ else
 }
 }
 //make checkQuiz1 and checkQuiz2
-function checkQuiz(questionNumber, correctAnswer) 
+function checkQuiz(questionNumber, correctAnswer, explanation) 
 {
   const options = document.getElementsByName('q' + questionNumber);
   let selectedOption = null;
@@ -267,14 +268,14 @@ function checkQuiz(questionNumber, correctAnswer)
   }
 
   if (selectedOption === correctAnswer) {
-    feedback.textContent = "Correct!";
+    feedback.textContent = explanationqa;
     feedback.style.color = "green";
   } else {
     feedback.textContent = "Incorrect. Try again!";
     feedback.style.color = "red";
   }
 }
-function checkQuiz1()
+/*function checkQuiz1()
 {
   const choices = document.getElementsByName('q1');
   let selected = null;
@@ -308,7 +309,7 @@ function checkQuiz1()
     //if user doesn't pick choice A
   }
 }
-
+*/
 function checkQuiz2()
 {
   const choices = document.getElementsByName('q2');
