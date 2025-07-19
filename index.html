@@ -77,8 +77,11 @@ function checkPhishing()
 
 
   //for loop that goes through all words in phishwords and checks the text to see if it includes any of the words
-  if(text!==null)
+  if(text===null)
   {
+    resultShow.textContent="Please enter a text";
+    resultShow.style.color="orange";
+  }
   for(const word of phishWords)
       if(text.includes(word))
       {
@@ -98,8 +101,6 @@ function checkPhishing()
     resultShow.style.color = "green";
   }
 }
-  else
-  resultShow.textContent="Please enter a text";
 }
 function checkQuiz()
 {
