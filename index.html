@@ -55,12 +55,35 @@
   
 <script>
 // do stuff here ( the functions )
-function checkMessage()
+function checkPhishing()
 {
-  const susWords = ["click here!", "urgent!", "final notice!","click now!","limited time","you've won","free","lottery"]
+  const text = document.getElementById('messageInput').valuetoLowerCase();
+  const phishWords = ["click here", "urgent", "final notice", "click now", "limited time" ,"you've won", "free", "lottery", "lucky"];
+  let found =false;
+
+  //for loop that goes through all words in phishwords and checks the text to see if it includes any of the words
+  for(const word of phishWords)
+      if(text.includes(word))
+      {
+        found=true;
+        break;
+        //when the word is found end loop
+      }
+  const resultShow = document.getElementById('result');
+  if(found)
+  {
+    resultShow.textContent = "This message may be a phishing attempt!";
+    resultShow.style.color = "red";
+  }
+  else
+  {
+    resultShow.textContent = "This message looks safe!";
+    resultShow.style.color = "green";
+  }
 }
-function checkPhishing(){
+function checkQuiz(){
   //make
+  
 }
 </script>
   
