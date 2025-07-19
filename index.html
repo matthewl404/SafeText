@@ -426,17 +426,17 @@ function checkQuiz3()
   const finalResultDiv = document.getElementById('finalQuizResult");
   if(score===total)
   {
-    finalResultDiv.textContent= "Perfect! You got ${score} out of ${total} correct! No phishing attempt can get past you."
+    finalResultDiv.textContent= "Perfect! You got ${score} out of ${total} correct! No phishing attempt can get past you.";
     finalResultDiv.style.color= "green";
   }
   else if(score>=total/2)
   {
-  finalResultDiv.textContent = "Not Bad! You got ${score} out of ${total} correct. Beware of phishing attempts!"
+  finalResultDiv.textContent = "Not Bad! You got ${score} out of ${total} correct. Beware of phishing attempts!";
   finalResultDiv.style.color = "orange";
   }
   else
   {
-    finalResultDiv.textContent= "Please research how to protect yourself from phishing attempts! You only got ${score} out of ${total} correct!"
+    finalResultDiv.textContent= "Please research how to protect yourself from phishing attempts! You only got ${score} out of ${total} correct!";
     finalResultDiv.style.color="red";
   }
 }
