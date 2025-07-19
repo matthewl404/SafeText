@@ -176,10 +176,10 @@
     <div id="resultQ4" class="feedback"></div>
     </div> 
   <div id="question5">
-    <p>Q5. Which of these is a strong password?</p>
-    <label><input type="radio" name="q5" value="a"> 123456</label>
-    <label><input type="radio" name="q5" value="b"> P@ssw0rd2025!</label>
-    <label><input type="radio" name="q5" value="c"> abcdef</label>
+    <p>Q5. Which of these is the strongest way to defend your account?</p>
+    <label><input type="radio" name="q5" value="a"> Having a weak password with 2 Factor Authentication</label>
+    <label><input type="radio" name="q5" value="b"> Having a strong password</label>
+    <label><input type="radio" name="q5" value="c"> Having a strong password with 2 Factor Authentication</label>
     <button onclick="checkQuiz5()">Submit Answer</button>
     <div id="resultQ5" class="feedback"></div>
     </div> 
@@ -195,6 +195,9 @@
 // do stuff here ( the functions )
 let correctq1 = null;
 let correctq2= null;
+let correctq3=null;
+let correctq4=null;
+let correctq5=null;
 function checkPhishing()
 {
   const text = document.getElementById('messageInput').value.toLowerCase();
@@ -301,7 +304,142 @@ function checkQuiz2()
     //if user doesn't pick choice A
   }
 }
+
+function checkQuiz3()
+{
+  const choices = document.getElementsByName('q3');
+  let selected = null;
+  //gets all choices from q3
+  const quizResult = document.getElementById('resultQ3');
+  for(const choice of choices)
+    if(choice.checked)
+    {
+      selected = choice.value;
+      //makes selected into the selected answer
+      break;
+    }
+  if(selected=='b')
+  {
+    quizResult.textContent= "Correct! Ignore messages that say you've won something if you never signed up for it.";
+    quizResult.style.color="green";
+    correctq3= true;
+    //if user picks choice B
+  }
+  else if(selected ===null)
+  {
+    quizResult.textContent = "Please pick a choice!";
+    quizResult.style.color = "orange";
+    //if user doesn't pick a choice
+  }
+  else
+  {
+    quizResult.textContent = "Incorrect. Pick another choice."
+    quizResult.style.color = "red";
+    correctq3=false;
+    //if user doesn't pick choice B
+  }
+}
+  function checkQuiz4()
+{
+  const choices = document.getElementsByName('q4');
+  let selected = null;
+  //gets all choices from q4
+  const quizResult = document.getElementById('resultQ4');
+  for(const choice of choices)
+    if(choice.checked)
+    {
+      selected = choice.value;
+      //makes selected into the selected answer
+      break;
+    }
+  if(selected=='c')
+  {
+    quizResult.textContent= "Correct! NEVER click on unknown links as you can accidentally download a harmful program to your computer.";
+    quizResult.style.color="green";
+    correctq4= true;
+    //if user picks choice C
+  }
+  else if(selected ===null)
+  {
+    quizResult.textContent = "Please pick a choice!";
+    quizResult.style.color = "orange";
+    //if user doesn't pick a choice
+  }
+  else
+  {
+    quizResult.textContent = "Incorrect. Pick another choice."
+    quizResult.style.color = "red";
+    correctq4=false;
+    //if user doesn't pick choice c
+  }
+}
+  function checkQuiz5()
+{
+  const choices = document.getElementsByName('q5');
+  let selected = null;
+  //gets all choices from q5
+  const quizResult = document.getElementById('resultQ5');
+  for(const choice of choices)
+    if(choice.checked)
+    {
+      selected = choice.value;
+      //makes selected into the selected answer
+      break;
+    }
+  if(selected=='c')
+  {
+    quizResult.textContent= "Correct! Making a password with symbols and numbers can greatly improve the strength of your password. Enabling 2FA can make it nearly impossible for a phishing attempt to work.";
+    quizResult.style.color="green";
+    correctq5= true;
+    //if user picks choice C
+  }
+  else if(selected ===null)
+  {
+    quizResult.textContent = "Please pick a choice!";
+    quizResult.style.color = "orange";
+    //if user doesn't pick a choice
+  }
+  else
+  {
+    quizResult.textContent = "Incorrect. Pick another choice."
+    quizResult.style.color = "red";
+    correctq5=false;
+    //if user doesn't pick choice C
+  }
   
+}
+  function showQuizResult()
+{
+  let score=0;
+  let total=5;
+  if(correctq1)
+    score++;
+  if(correctq2)
+    score++;
+  if(correctq3)
+    score++;
+  if(correctq4)
+    score++;
+  if(correctq5)
+    score++;
+
+  const finalResultDiv = document.getElementById('finalQuizResult");
+  if(score===total)
+  {
+    finalResultDiv.textContent= "Perfect! You got ${score} out of ${total} correct! No phishing attempt can get past you."
+    finalResultDiv.style.color= "green";
+  }
+  else if(score>=total/2)
+  {
+  finalResultDiv.textContent = "Not Bad! You got ${score} out of ${total} correct. Beware of phishing attempts!"
+  finalResultDiv.style.color = "orange";
+  }
+  else
+  {
+    finalResultDiv.textContent= "Please research how to protect yourself from phishing attempts! You only got ${score} out of ${total} correct!"
+    finalResultDiv.style.color="red";
+  }
+}
 </script>
   
 </body>
