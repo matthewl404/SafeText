@@ -82,6 +82,7 @@ function checkPhishing()
     resultShow.textContent="Please enter a text";
     resultShow.style.color="orange";
   }
+  else
   for(const word of phishWords)
       if(text.includes(word))
       {
@@ -101,7 +102,7 @@ function checkPhishing()
     resultShow.style.color = "green";
   }
 }
-}
+
 function checkQuiz()
 {
   const answers = document.getElementsByName('q1');
