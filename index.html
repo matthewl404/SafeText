@@ -452,7 +452,7 @@ function checkQuiz3()
 {
   let score=0;
   let total=5;
-  let answeredall= true;
+  let answeredAll= true;
   if(correctq1)
     score++;
   if(correctq2)
@@ -464,27 +464,27 @@ function checkQuiz3()
   if(correctq5)
     score++;
   if(correctq1===null)
-    answeredall=false;
+    answeredAll=false;
   if(correctq2===null)
-    answeredall=false;
+    answeredAll=false;
   if(correctq3===null)
-    answeredall=false;
+    answeredAll=false;
   if(correctq4===null)
-    answeredall=false;
+    answeredAll=false;
   if(correctq5===null)
-    answeredall=false;
+    answeredAll=false;
   const finalResultDiv = document.getElementById('finalQuizResult');
-  if(score===total && answeredall)
+  if(score===total && answeredAll)
   {
     finalResultDiv.textContent= `Perfect! You got ${score} out of ${total} correct! No phishing attempt can get past you.`;
     finalResultDiv.style.color= "green";
   }
-  else if(score>=total/2 && answeredall)
+  else if(score>=total/2 && answeredAll)
   {
   finalResultDiv.textContent = `Not Bad! You got ${score} out of ${total} correct. Beware of phishing attempts!`;
   finalResultDiv.style.color = "orange";
   }
-  else if(answeredall)
+  else if(answeredAll)
   {
     finalResultDiv.textContent= `Please research how to protect yourself from phishing attempts! You only got ${score} out of ${total} correct!`;
     finalResultDiv.style.color="red";
