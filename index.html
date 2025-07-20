@@ -148,7 +148,7 @@
     <label><input type="radio" name="q1" value="a"> A message asks you to click a link</label>
     <label><input type="radio" name="q1" value="b"> A message from your friend</label>
     <label><input type="radio" name="q1" value="c"> A message from your mom</label>
-    <button onclick="checkQuiz(1, 'a', 'Correct! If a random person asks you to click a suspicious link, it is usually a sign of phishing.')">Submit Answer</button>
+    <button onclick="checkQuiz(1, 'a', 'Correct! If a random person asks you to click a suspicious link, it\'s usually a sign of phishing.')">Submit Answer</button>
     <div id="resultQ1" class="feedback"></div>
   </div>
  <div id="question2">
@@ -164,7 +164,7 @@
     <label><input type="radio" name="q3" value="a"> Click the link to claim it</label>
     <label><input type="radio" name="q3" value="b"> Ignore it, it could be a scam</label>
     <label><input type="radio" name="q3" value="c"> Reply and ask if it’s real</label>
-    <button onclick="checkQuiz3()">Submit Answer</button>
+    <button onclick="checkQuiz3(3,'b','Correct! Ignore messages that say you\'ve won something if you never signed up for it.')">Submit Answer</button>
     <div id="resultQ3" class="feedback"></div>
     </div> 
   <div id="question4">
@@ -272,40 +272,6 @@ function checkQuiz(questionNumber, correctAnswer, explanation)
   } else {
     feedback.textContent = "Incorrect. Try again!";
     feedback.style.color = "red";
-  }
-}
-function checkQuiz2()
-{
-  const choices = document.getElementsByName('q2');
-  let selected = null;
-  //gets all choices from q2
-  const quizResult = document.getElementById('resultQ2');
-  for(const choice of choices)
-    if(choice.checked)
-    {
-      selected = choice.value;
-      //makes selected into the selected answer
-      break;
-    }
-  if(selected=='b')
-  {
-    quizResult.textContent= "Correct! Always forward an email for phishing to reportphishing@apwg.org";
-    quizResult.style.color="green";
-    correctq2= true;
-    //if user picks choice A
-  }
-  else if(selected ===null)
-  {
-    quizResult.textContent = "Please pick a choice!";
-    quizResult.style.color = "orange";
-    //if user doesn't pick a choice
-  }
-  else
-  {
-    quizResult.textContent = "Incorrect. Pick another choice."
-    quizResult.style.color = "red";
-    correctq2=false;
-    //if user doesn't pick choice A
   }
 }
 
