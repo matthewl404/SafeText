@@ -266,7 +266,13 @@ function checkQuiz(questionNumber, correctAnswer, explanation)
     return;
   }
 
-  if (selectedOption === correctAnswer) {
+  const isCorrect = selectedOption === correctAnswer;
+  if (questionNumber === 1) correctq1 = isCorrect;
+  if (questionNumber === 2) correctq2 = isCorrect;
+  if (questionNumber === 3) correctq3 = isCorrect;
+  if (questionNumber === 4) correctq4 = isCorrect;
+  if (questionNumber === 5) correctq5 = isCorrect;
+  if (isCorrect) {
     feedback.textContent = explanation;
     feedback.style.color = "green";
   } else {
@@ -295,53 +301,7 @@ function checkQuiz(questionNumber, correctAnswer, explanation)
           finalResultDiv.style.color = "red";
         }
     }
-  function showQuizResults()
-{
-  let score=0;
-  let total=5;
-  let answeredAll= true;
-  if(correctq1)
-    score++;
-  if(correctq2)
-    score++;
-  if(correctq3)
-    score++;
-  if(correctq4)
-    score++;
-  if(correctq5)
-    score++;
-  if(correctq1===null)
-    answeredAll=false;
-  if(correctq2===null)
-    answeredAll=false;
-  if(correctq3===null)
-    answeredAll=false;
-  if(correctq4===null)
-    answeredAll=false;
-  if(correctq5===null)
-    answeredAll=false;
-  const finalResultDiv = document.getElementById('finalQuizResult');
-  if(score===total && answeredAll)
-  {
-    finalResultDiv.textContent= `Perfect! You got ${score} out of ${total} correct! No phishing attempt can get past you.`;
-    finalResultDiv.style.color= "green";
-  }
-  else if(score>=total/2 && answeredAll)
-  {
-  finalResultDiv.textContent = `Not Bad! You got ${score} out of ${total} correct. Beware of phishing attempts!`;
-  finalResultDiv.style.color = "orange";
-  }
-  else if(answeredAll)
-  {
-    finalResultDiv.textContent= `Please research how to protect yourself from phishing attempts! You only got ${score} out of ${total} correct!`;
-    finalResultDiv.style.color="red";
-  }
-  else
-  {
-    finalResultDiv.textContent= "Please answer all questions before submitting your result!";
-    finalResultDiv.style.color="blue";
-  }
-}
+  
 </script>
   
 </body>
