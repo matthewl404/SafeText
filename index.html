@@ -156,7 +156,7 @@
     <label><input type="radio" name="q2" value="a"> Click the link to see what it is</label>
     <label><input type="radio" name="q2" value="b"> Report it or ask an adult</label>
     <label><input type="radio" name="q2" value="c"> Reply and ask if it’s real</label>
-    <button onclick="checkQuiz2()">Submit Answer</button>
+    <button onclick="checkQuiz(2, 'b', 'Correct! Always forward an email for phishing to reportphishing@apwg.org')">Submit Answer</button>
     <div id="resultQ2" class="feedback"></div>
     </div> 
   <div id="question3">
@@ -274,41 +274,6 @@ function checkQuiz(questionNumber, correctAnswer, explanation)
     feedback.style.color = "red";
   }
 }
-/*function checkQuiz1()
-{
-  const choices = document.getElementsByName('q1');
-  let selected = null;
-  //gets all choices from q1 
-  const quizResult = document.getElementById('resultQ1');
-  for(const choice of choices)
-    if(choice.checked)
-    {
-      selected = choice.value;
-      //makes selected into the selected answer
-      break;
-    }
-  if(selected=='a')
-  {
-    quizResult.textContent= "Correct! If a random person asks you to click a suspicious link, it's a sign of phishing.";
-    quizResult.style.color="green";
-    correctq1 = true;
-    //if user picks choice A
-  }
-  else if(selected ===null)
-  {
-    quizResult.textContent = "Please pick a choice!";
-    quizResult.style.color = "orange";
-    //if user doesn't pick a choice
-  }
-  else
-  {
-    quizResult.textContent = "Incorrect. Pick another choice."
-    quizResult.style.color = "red";
-    correctq1= false;
-    //if user doesn't pick choice A
-  }
-}
-*/
 function checkQuiz2()
 {
   const choices = document.getElementsByName('q2');
